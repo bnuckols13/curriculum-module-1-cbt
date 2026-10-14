@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CBT Overview</title>
+<title>Curriculum Module 1: CBT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
@@ -13,14 +13,15 @@
   --bg:#FAFAF7; --surface:#FFFFFF; --border:#E7E5E4; --soft:#F4F2EE;
   --accent:#5C858B; --accent-bg:#E8F0F1;
   --sit:#1C1917; --tho:#5C6B8B; --fee:#A0674B; --bod:#7A6A9B; --beh:#4A7C6F;
+  --av:#5C6B8B; --ch:#A67C3D; --ad:#7A6A9B;
   --display:'Newsreader',Georgia,serif;
   --body:'Inter',-apple-system,'Segoe UI',system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:18px;-webkit-font-smoothing:antialiased}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.7}
-button{font-family:inherit;color:inherit}
-.wrap{max-width:900px;margin:0 auto;padding:2.6rem 1.5rem 3rem}
+button,input{font-family:inherit;color:inherit}
+.wrap{max-width:920px;margin:0 auto;padding:2.6rem 1.5rem 3rem}
 
 .label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 h1{font-family:var(--display);font-weight:600;font-size:2.5rem;line-height:1.1;letter-spacing:-.02em;margin-bottom:.4rem}
@@ -39,36 +40,48 @@ h1{font-family:var(--display);font-weight:600;font-size:2.5rem;line-height:1.1;l
 h2{font-family:var(--display);font-weight:600;font-size:1.65rem;line-height:1.2;margin-bottom:.7rem}
 .timing{float:right;font-size:.75rem;font-weight:500;color:var(--ink-3);margin-top:.5rem}
 .block{margin-bottom:2.8rem}
-.text{font-size:1rem;color:var(--ink-2);max-width:64ch;margin-bottom:.8rem}
+.text{font-size:1rem;color:var(--ink-2);max-width:64ch;margin-bottom:.9rem}
 .text strong{color:var(--ink)}
-hr{border:0;border-top:1px solid var(--border);margin:2.4rem 0}
 
 .qs{list-style:none}
-.qs li{font-family:var(--display);font-size:1.38rem;line-height:1.35;padding:.8rem 0;border-bottom:1px solid var(--border)}
+.qs li{font-family:var(--display);font-size:1.35rem;line-height:1.35;padding:.75rem 0;border-bottom:1px solid var(--border)}
 .qs li:last-child{border-bottom:0}
-.qs li small{display:block;font-family:var(--body);font-size:.88rem;color:var(--ink-3);margin-top:.2rem}
-
-.scene{background:var(--ink);color:#fff;border-radius:10px;padding:1.6rem 1.8rem;margin:.6rem 0 1.2rem}
-.scene .sl{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A8A29E}
-.scene p{font-family:var(--display);font-size:1.75rem;line-height:1.3;margin-top:.3rem}
 
 .callout{border-left:3px solid var(--accent);background:var(--accent-bg);padding:1rem 1.25rem;margin:1rem 0}
 .callout .cl{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
 .callout p{font-size:.97rem;color:var(--ink-2)}
 
-/* Chain diagram */
-.reads{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+/* Harvest */
+.harvest{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.hcol{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--c);border-radius:8px;padding:1rem 1rem 1.1rem;display:flex;flex-direction:column}
+.hcol .hk{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.hcol .hq{font-family:var(--display);font-size:1.18rem;line-height:1.3;margin:.3rem 0 .8rem}
+.hcol .items{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.7rem;min-height:1.9rem}
+.item{display:inline-flex;align-items:center;gap:.3rem;background:var(--soft);border:1px solid var(--border);border-radius:999px;padding:.22rem .35rem .22rem .75rem;font-size:.86rem;cursor:pointer}
+.item:hover{border-color:var(--c)}
+.item.on{background:var(--c);border-color:var(--c);color:#fff}
+.item .x{background:none;border:0;color:inherit;opacity:.5;cursor:pointer;font-size:.95rem;padding:0 .25rem}
+.hcol input{margin-top:auto;width:100%;border:1px solid var(--border);border-radius:6px;padding:.45rem .6rem;font-size:.9rem;background:var(--bg);outline:none}
+.hcol input:focus{border-color:var(--c);background:var(--surface)}
+.hint{font-size:.82rem;color:var(--ink-3);margin-top:.6rem}
+
+/* Example picker */
+.picker{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;align-items:center}
 .chip{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:.42rem 1rem;font-size:.88rem;font-weight:500;color:var(--ink-2);cursor:pointer}
 .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
-.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch}
+.picker .from{font-size:.82rem;color:var(--ink-3);margin-left:.3rem}
+
+/* Chain */
+.chain{display:grid;grid-template-columns:repeat(5,1fr)}
 .link{position:relative;background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--c);padding:.9rem .9rem 1rem;margin-right:22px;border-radius:6px;min-height:150px}
 .link:last-child{margin-right:0}
 .link:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;width:12px;height:12px;border-top:2px solid var(--ink-3);border-right:2px solid var(--ink-3);transform:translateY(-50%) rotate(45deg)}
 .link .lk{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
-.link .lv{font-family:var(--display);font-size:1.15rem;line-height:1.3;margin-top:.35rem;outline:none;min-height:1.5rem}
-.link .lv:empty::before{content:"type here";color:#C4BFB8;font-style:italic}
-.link .lv.swap{animation:swap .35s ease}
-@keyframes swap{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.ed{font-family:var(--display);font-size:1.12rem;line-height:1.3;margin-top:.35rem;outline:none;min-height:1.5rem;border-radius:4px}
+.ed:hover{background:var(--soft)}
+.ed:focus{background:var(--surface);box-shadow:0 0 0 1.5px var(--accent)}
+.ed:empty::before{content:"type here";color:#C4BFB8;font-style:italic}
+.edhint{font-size:.82rem;color:var(--ink-3);margin-top:.7rem}
 
 /* Five-part model */
 .five{display:grid;grid-template-columns:1.05fr 1fr;gap:1.6rem;align-items:center}
@@ -80,7 +93,7 @@ hr{border:0;border-top:1px solid var(--border);margin:2.4rem 0}
 .five .node.on text{fill:#fff}
 .five .ring{fill:none;stroke:var(--border);stroke-width:26}
 .five .ringlab{font-family:Inter,sans-serif;font-size:11px;letter-spacing:.14em;fill:var(--ink-3)}
-.five .edge{stroke:#CFC9C1;stroke-width:1.3}
+.five .edge{stroke:#CFC9C1;stroke-width:1.3;fill:none}
 .detail{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--c,var(--ink-3));border-radius:8px;padding:1.2rem 1.4rem;min-height:210px}
 .detail .dk{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--ink-3))}
 .detail .dh{font-family:var(--display);font-size:1.4rem;font-weight:600;margin:.15rem 0 .4rem;line-height:1.25}
@@ -88,28 +101,24 @@ hr{border:0;border-top:1px solid var(--border);margin:2.4rem 0}
 .detail .dx{font-size:.9rem;color:var(--ink-2);margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--border)}
 .detail .dx b{color:var(--ink);font-weight:600}
 
-/* Loop */
-.loopwrap{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:center}
-.loopwrap svg{width:100%;height:auto;display:block}
-.loop .st circle{fill:var(--surface);stroke:var(--ink-3);stroke-width:1.5;transition:all .2s}
-.loop .st text{font-family:Inter,sans-serif;font-size:13px;font-weight:600;fill:var(--ink-2);pointer-events:none}
-.loop .st.on circle{fill:var(--accent);stroke:var(--accent)}
-.loop .st.on text{fill:#fff}
-.loop .st.done circle{fill:var(--accent-bg);stroke:var(--accent)}
-.loop .arc{fill:none;stroke:#CFC9C1;stroke-width:1.5}
+/* Exposure chart */
+.expo{display:grid;grid-template-columns:1.25fr 1fr;gap:1.6rem;align-items:center}
+.expo svg{width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.expo .ax{font-family:Inter,sans-serif;font-size:10.5px;letter-spacing:.14em;fill:var(--ink-3)}
+.expo .ln{fill:none;stroke-width:3;stroke-linecap:round}
+.expo .dash{stroke-dasharray:6 6}
+.expo .lab2{font-family:Inter,sans-serif;font-size:12px;font-weight:600}
+.expo .pv{transition:opacity .3s}
+.expo .pv.off{opacity:.12}
 .steps{list-style:none;counter-reset:s}
-.steps li{counter-increment:s;padding:.55rem .8rem .55rem 2.3rem;position:relative;border-radius:6px;color:var(--ink-3);transition:all .2s;font-size:.98rem}
-.steps li::before{content:counter(s);position:absolute;left:.7rem;top:.6rem;font-size:.78rem;font-weight:600}
-.steps li.seen{color:var(--ink-2)}
-.steps li.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 0 var(--border),0 0 0 1px var(--border)}
-.steps li b{font-weight:600}
-.ctl{display:flex;gap:.6rem;margin-top:1rem}
-.btn{background:var(--ink);color:#fff;border:0;border-radius:6px;padding:.5rem 1rem;font-size:.88rem;font-weight:600;cursor:pointer}
-.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--border)}
+.steps li{counter-increment:s;padding:.5rem .8rem .5rem 2.3rem;position:relative;font-size:.98rem;color:var(--ink-2);border-bottom:1px solid var(--border)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:.7rem;top:.55rem;font-size:.78rem;font-weight:600;color:var(--ink-3)}
+.steps li b{color:var(--ink);font-weight:600}
 
 /* Board */
 table{width:100%;border-collapse:collapse;table-layout:fixed}
-th{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:.5rem .5rem;border-bottom:2px solid var(--c)}
+th{font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:.5rem;border-bottom:2px solid var(--c)}
 td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
 .cell{min-height:2.6rem;padding:.45rem .5rem;border-radius:5px;font-size:1rem;line-height:1.45;outline:none}
 .cell:hover{background:var(--soft)}
@@ -120,7 +129,7 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
 .lines li{list-style:none;display:flex;gap:1rem;padding:.85rem 1.2rem;border-bottom:1px solid var(--border);font-family:var(--display);font-size:1.25rem}
 .lines li:last-child{border-bottom:0}
 .lines li span{font-family:var(--body);font-size:.8rem;color:var(--ink-3);padding-top:.35rem;min-width:1rem}
-.board{background:var(--surface);border:1.5px dashed #C9C2B8;border-radius:6px;padding:1rem 1.2rem;min-height:180px;font-size:1.1rem;outline:none}
+.board{background:var(--surface);border:1.5px dashed #C9C2B8;border-radius:6px;padding:1rem 1.2rem;min-height:160px;font-size:1.1rem;outline:none}
 .board:focus{border-style:solid;border-color:var(--accent)}
 
 .pager{display:flex;justify-content:space-between;margin-top:2.4rem;padding-top:1.3rem;border-top:1px solid var(--border)}
@@ -131,22 +140,21 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
 
 @media (max-width:760px){
   html{font-size:17px}
-  .five,.loopwrap{grid-template-columns:1fr}
-  .chain{grid-template-columns:1fr}
+  .harvest,.five,.expo,.chain{grid-template-columns:1fr}
   .link{margin:0 0 22px}
   .link:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%) rotate(135deg)}
-  h1{font-size:2rem}.scene p{font-size:1.4rem}
+  h1{font-size:2rem}
 }
-@media (prefers-reduced-motion:reduce){.panel.active,.link .lv.swap{animation:none}}
-@media print{.nav,.pager,.ctl,.reads{display:none}.panel{display:block !important}}
+@media (prefers-reduced-motion:reduce){.panel.active{animation:none}}
+@media print{.nav,.pager,.picker,.hcol input{display:none}.panel{display:block !important}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="label">CBT &middot; Week 1</div>
-    <h1>CBT Overview</h1>
+    <div class="label">Curriculum &middot; Module 1</div>
+    <h1>Module 1: CBT</h1>
     <p class="sub">How situations, thoughts, feelings, the body, and behavior affect each other.</p>
   </header>
 
@@ -161,24 +169,35 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
   <section class="panel active">
     <div class="block">
       <div class="section-label">Check-in</div>
-      <h2><span class="timing">:00&ndash;:05</span>Go around</h2>
-      <ul class="qs">
-        <li>Name, and one word for how you're arriving.</li>
-        <li>What's your energy like today: low, medium, or high?</li>
-      </ul>
+      <h2><span class="timing">:00&ndash;:03</span>Go around</h2>
+      <ul class="qs"><li>Name, and one word for how you're arriving.</li></ul>
     </div>
 
     <div class="block">
       <div class="section-label">Getting ready</div>
-      <h2><span class="timing">:05&ndash;:10</span>Type it in the chat</h2>
-      <div class="scene">
-        <div class="sl">The situation</div>
-        <p>It's 2 a.m. You're in bed and you hear a loud crash in the kitchen.</p>
+      <h2><span class="timing">:03&ndash;:12</span>A few words each</h2>
+      <p class="text">Answer any of these in a few words. No details needed, and passing is fine. We'll use some of these as examples today.</p>
+      <div class="harvest" id="harvest">
+        <div class="hcol" data-t="avoid" style="--c:var(--av)">
+          <div class="hk">Avoiding</div>
+          <div class="hq">What's something you've been putting off lately?</div>
+          <div class="items"></div>
+          <input type="text" placeholder="Type and press Enter" aria-label="Add something people have been putting off">
+        </div>
+        <div class="hcol" data-t="challenge" style="--c:var(--ch)">
+          <div class="hk">A challenge</div>
+          <div class="hq">What's a challenge you've set for yourself, big or small?</div>
+          <div class="items"></div>
+          <input type="text" placeholder="Type and press Enter" aria-label="Add a challenge">
+        </div>
+        <div class="hcol" data-t="hard" style="--c:var(--ad)">
+          <div class="hk">Something hard</div>
+          <div class="hq">What's been hard lately? Just name it.</div>
+          <div class="items"></div>
+          <input type="text" placeholder="Type and press Enter" aria-label="Add something hard">
+        </div>
       </div>
-      <ul class="qs">
-        <li>What's the first thing that goes through your mind?
-          <small>Everyone types, then hits enter at the same time.</small></li>
-      </ul>
+      <p class="hint">Click any answer to use it as the example in Part 2.</p>
     </div>
 
     <div class="pager"><button class="ghost">&larr;</button><button data-p="1">The model &rarr;</button></div>
@@ -188,35 +207,39 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
   <section class="panel">
     <div class="block">
       <div class="section-label">Psychoeducation &middot; 1</div>
-      <h2><span class="timing">:10&ndash;:14</span>Same situation, different first thought</h2>
-      <p class="text">The crash is the same for everyone. What happens next depends on the first thought.</p>
-      <div class="reads" id="reads">
-        <button class="chip on" data-r="0">"Someone broke in."</button>
-        <button class="chip" data-r="1">"The cat knocked something over."</button>
-        <button class="chip" data-r="2">"My roommate's home early."</button>
-        <button class="chip" data-r="3">Our answer</button>
+      <h2><span class="timing">:12&ndash;:16</span>One example, five parts</h2>
+      <div class="picker" id="picker">
+        <button class="chip on" data-t="avoid">Avoiding</button>
+        <button class="chip" data-t="challenge">A challenge</button>
+        <button class="chip" data-t="hard">Something hard</button>
+        <span class="from" id="from"></span>
       </div>
-      <div class="chain" id="chain">
-        <div class="link" style="--c:var(--sit)"><div class="lk">Situation</div><div class="lv">Loud crash in the kitchen at 2 a.m.</div></div>
-        <div class="link" style="--c:var(--tho)"><div class="lk">Thought</div><div class="lv" data-f="0"></div></div>
-        <div class="link" style="--c:var(--fee)"><div class="lk">Feeling</div><div class="lv" data-f="1"></div></div>
-        <div class="link" style="--c:var(--bod)"><div class="lk">Body</div><div class="lv" data-f="2"></div></div>
-        <div class="link" style="--c:var(--beh)"><div class="lk">Behavior</div><div class="lv" data-f="3"></div></div>
+      <div class="chain">
+        <div class="link" style="--c:var(--sit)"><div class="lk">Situation</div><div class="ed" data-f="sit" contenteditable="true" spellcheck="false"></div></div>
+        <div class="link" style="--c:var(--tho)"><div class="lk">First thought</div><div class="ed" data-f="tho" contenteditable="true" spellcheck="false"></div></div>
+        <div class="link" style="--c:var(--fee)"><div class="lk">Feeling</div><div class="ed" data-f="fee" contenteditable="true" spellcheck="false"></div></div>
+        <div class="link" style="--c:var(--bod)"><div class="lk">Body</div><div class="ed" data-f="bod" contenteditable="true" spellcheck="false"></div></div>
+        <div class="link" style="--c:var(--beh)"><div class="lk">Behavior</div><div class="ed" data-f="beh" contenteditable="true" spellcheck="false"></div></div>
+      </div>
+      <p class="edhint">Every box can be edited. Ask the group what the first thought might be, then the feeling, the body, and what someone might do.</p>
+      <div class="callout">
+        <div class="cl">Automatic thoughts</div>
+        <p>The first thought usually shows up on its own, fast, and feels like a fact. CBT calls it an <strong>automatic thought</strong>. It's often a guess or a prediction. Noticing it is the first skill.</p>
       </div>
     </div>
 
     <div class="block">
       <div class="section-label">Psychoeducation &middot; 2</div>
-      <h2><span class="timing">:14&ndash;:19</span>The five-part model</h2>
-      <p class="text">CBT looks at five parts of an experience. The situation is around us. The other four are inside us, and each one affects the others. Click a part.</p>
+      <h2><span class="timing">:16&ndash;:20</span>The five-part model</h2>
+      <p class="text">The situation is around us. Thoughts, feelings, the body, and behavior are inside us, and each one affects the others. Click a part.</p>
       <div class="five">
         <svg viewBox="0 0 400 400" role="img" aria-label="Five-part model: thoughts, feelings, body, and behavior inside a ring labeled situation">
           <circle class="ring" cx="200" cy="200" r="178"/>
           <text class="ringlab" x="200" y="30" text-anchor="middle">SITUATION</text>
           <text class="ringlab" x="200" y="383" text-anchor="middle">WHO &middot; WHERE &middot; WHEN</text>
+          <polygon class="edge" points="200,96 304,200 200,304 96,200"/>
           <line class="edge" x1="200" y1="96" x2="200" y2="304"/>
           <line class="edge" x1="96" y1="200" x2="304" y2="200"/>
-          <polygon class="edge" points="200,96 304,200 200,304 96,200" fill="none"/>
           <g class="node" data-k="tho" style="--c:var(--tho)" tabindex="0" role="button"><circle cx="200" cy="96" r="50"/><text x="200" y="102" text-anchor="middle">Thoughts</text></g>
           <g class="node" data-k="fee" style="--c:var(--fee)" tabindex="0" role="button"><circle cx="304" cy="200" r="50"/><text x="304" y="206" text-anchor="middle">Feelings</text></g>
           <g class="node" data-k="beh" style="--c:var(--beh)" tabindex="0" role="button"><circle cx="200" cy="304" r="50"/><text x="200" y="310" text-anchor="middle">Behavior</text></g>
@@ -225,42 +248,43 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
         <div class="detail" id="detail">
           <div class="dk">Five parts</div>
           <div class="dh">Click a part to see what it means</div>
-          <div class="dp">Thoughts, feelings, body, and behavior all happen inside a situation. A change in one part can change the others.</div>
+          <div class="dp">A change in one part can change the others.</div>
         </div>
-      </div>
-      <div class="callout">
-        <div class="cl">Automatic thoughts</div>
-        <p>The first thought usually shows up on its own, fast, and feels like a fact. CBT calls it an <strong>automatic thought</strong>. It's often a guess about what something means. Noticing it is the first skill.</p>
       </div>
     </div>
 
     <div class="block">
       <div class="section-label">Psychoeducation &middot; 3</div>
-      <h2><span class="timing">:19&ndash;:23</span>How a pattern keeps itself going</h2>
-      <p class="text">Some behaviors bring relief right away and make the same thought stronger later. Step through it.</p>
-      <div class="loopwrap">
-        <svg class="loop" viewBox="0 0 360 360" role="img" aria-label="A five-step loop">
-          <circle class="arc" cx="180" cy="180" r="128"/>
-          <g class="st" data-s="0"><circle cx="180" cy="52" r="38"/><text x="180" y="57" text-anchor="middle">Thought</text></g>
-          <g class="st" data-s="1"><circle cx="302" cy="140" r="38"/><text x="302" y="145" text-anchor="middle">Feeling</text></g>
-          <g class="st" data-s="2"><circle cx="255" cy="283" r="38"/><text x="255" y="288" text-anchor="middle">Behavior</text></g>
-          <g class="st" data-s="3"><circle cx="105" cy="283" r="38"/><text x="105" y="288" text-anchor="middle">Relief</text></g>
-          <g class="st" data-s="4"><circle cx="58" cy="140" r="38"/><text x="58" y="145" text-anchor="middle">Later</text></g>
+      <h2><span class="timing">:20&ndash;:25</span>Two ways it can go</h2>
+      <p class="text" id="expoIntro"></p>
+      <div class="picker" id="paths">
+        <button class="chip on" data-v="away">Move away</button>
+        <button class="chip" data-v="toward">Stay with it</button>
+        <button class="chip" data-v="both">Compare</button>
+      </div>
+      <div class="expo">
+        <svg viewBox="0 0 540 300" role="img" aria-label="Anxiety over time when moving away versus staying with something hard">
+          <line x1="50" y1="260" x2="520" y2="260" stroke="#A8A29E" stroke-width="1.3"/>
+          <line x1="50" y1="30" x2="50" y2="260" stroke="#A8A29E" stroke-width="1.3"/>
+          <text x="285" y="288" text-anchor="middle" class="ax">TIME</text>
+          <text x="22" y="145" text-anchor="middle" class="ax" transform="rotate(-90 22 145)">DISTRESS</text>
+          <g class="pv away">
+            <path d="M52,245 C95,240 125,130 165,90" class="ln" style="stroke:var(--fee)"/>
+            <path d="M165,90 L180,232" class="ln" style="stroke:var(--fee)"/>
+            <text x="186" y="222" class="lab2" style="fill:var(--fee)">quick relief</text>
+            <path d="M300,240 C325,225 345,90 375,52" class="ln dash" style="stroke:var(--fee)"/>
+            <text x="383" y="56" class="lab2" style="fill:var(--fee)">next time: higher, faster</text>
+          </g>
+          <g class="pv toward">
+            <path d="M52,245 C95,240 125,130 170,92 C230,62 265,115 320,165 C380,215 440,232 515,238" class="ln" style="stroke:var(--beh)"/>
+            <text x="300" y="132" class="lab2" style="fill:var(--beh)">it peaks, and often eases</text>
+          </g>
         </svg>
-        <div>
-          <ol class="steps" id="steps">
-            <li><b>Thought:</b> "I'll say something awkward at the party."</li>
-            <li><b>Feeling:</b> nervous, with a knot in the stomach.</li>
-            <li><b>Behavior:</b> stay home.</li>
-            <li><b>Relief:</b> the nervous feeling drops right away.</li>
-            <li><b>Later:</b> the thought never got tested, so it shows up stronger next time.</li>
-          </ol>
-          <div class="ctl"><button class="btn" id="next">Next step</button><button class="btn ghost" id="restart">Start over</button></div>
-        </div>
+        <ol class="steps" id="pathSteps"></ol>
       </div>
       <div class="callout">
-        <div class="cl">Short term and long term</div>
-        <p>Relief now and a stronger thought later is one way patterns keep going. CBT looks for a small change anywhere in the loop.</p>
+        <div class="cl">Exposure</div>
+        <p>Exposure means practicing the second path on purpose, one small step at a time, with your treatment team. The distress doesn't always drop during the practice. What changes is what you learn: "That was hard, and I got through it."</p>
       </div>
     </div>
 
@@ -271,12 +295,12 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
   <section class="panel">
     <div class="block">
       <div class="section-label">Discussion</div>
-      <h2><span class="timing">:23&ndash;:35</span>Questions</h2>
+      <h2><span class="timing">:25&ndash;:35</span>Questions</h2>
       <ul class="qs">
-        <li>With the crash, which part showed up first for you: a thought, a feeling, or your body?</li>
-        <li>Think of an ordinary moment this week when your mood shifted, even a little. What was going on, and what went through your mind?</li>
-        <li>Looking at the board, what do you notice?</li>
-        <li>If the first thought had been different, what else might have changed?</li>
+        <li>Which part usually shows up first for you: a thought, a feeling, or your body?</li>
+        <li>What's a first thought that tends to show up when you think about something you've been putting off?</li>
+        <li>What does moving away look like for people? What does staying with it look like?</li>
+        <li>What helps a person stay with something hard, even for a little longer?</li>
       </ul>
     </div>
 
@@ -285,7 +309,7 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
       <h2>Our examples</h2>
       <table>
         <thead><tr>
-          <th style="--c:var(--sit);width:24%">Situation</th><th style="--c:var(--tho);width:24%">Thought</th>
+          <th style="--c:var(--sit);width:24%">Situation</th><th style="--c:var(--tho);width:24%">First thought</th>
           <th style="--c:var(--fee)">Feeling</th><th style="--c:var(--bod)">Body</th><th style="--c:var(--beh)">Behavior</th>
         </tr></thead>
         <tbody id="rows"></tbody>
@@ -293,7 +317,7 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
       <button class="add" id="add">+ Add a row</button>
       <div class="callout">
         <div class="cl">For the room</div>
-        <p>Small, everyday moments. The thought, not the whole story behind it. No numbers, no bodies, no foods.</p>
+        <p>Name it in a few words. The thought, not the whole story behind it. No numbers, no bodies, no foods.</p>
       </div>
     </div>
 
@@ -307,7 +331,7 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
       <h2><span class="timing">:35&ndash;:45</span>Go around</h2>
       <ul class="qs">
         <li>What's one idea from today you want to remember?</li>
-        <li>Which part do you usually notice first in yourself?</li>
+        <li>What's one small step toward something you named today?</li>
         <li>One word for what you're leaving with.</li>
       </ul>
     </div>
@@ -317,9 +341,9 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
       <h2>Catch one moment</h2>
       <ol class="lines">
         <li><span>1</span>What was the situation?</li>
-        <li><span>2</span>What went through my mind?</li>
+        <li><span>2</span>What was the first thought?</li>
         <li><span>3</span>What did I feel, in my mood and in my body?</li>
-        <li><span>4</span>What did I do?</li>
+        <li><span>4</span>Did I move away, or stay with it?</li>
       </ol>
       <p class="text" style="margin-top:.8rem">The full thought record has more columns, for anyone who wants them.</p>
     </div>
@@ -340,6 +364,7 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
 
 <script>
 (function(){
+  /* Tabs */
   var tabs = document.querySelectorAll('.nav button'), panels = document.querySelectorAll('.panel'), cur = 0;
   function show(i){
     if (i < 0 || i >= panels.length) return;
@@ -355,63 +380,115 @@ td{border-bottom:1px solid var(--border);vertical-align:top;padding:.2rem}
     if (e.key === 'ArrowLeft') show(cur - 1);
   });
 
-  // Chain: three readings of the crash, plus one the group fills in
-  var reads = [
-    ["Someone broke in.", "Scared", "Heart pounding, frozen", "Hide, call 911"],
-    ["The cat knocked something over.", "Annoyed", "Sigh, body relaxes", "Roll over, back to sleep"],
-    ["My roommate's home early.", "Relieved", "Body settles", "Get up and say hi"],
-    ["", "", "", ""]
-  ];
-  var fields = document.querySelectorAll('#chain .lv[data-f]'), rsel = 0;
-  function setRead(r){
-    fields.forEach(function(f, i){ reads[rsel][i] = rsel === 3 ? f.textContent : reads[rsel][i]; });
-    rsel = r;
-    fields.forEach(function(f, i){
-      f.textContent = reads[r][i];
-      f.contentEditable = r === 3 ? 'true' : 'false';
-      f.classList.remove('swap'); void f.offsetWidth; f.classList.add('swap');
-    });
-    document.querySelectorAll('#reads .chip').forEach(function(c){ c.classList.toggle('on', Number(c.dataset.r) === r); });
-    if (r === 3) fields[0].focus();
-  }
-  document.querySelectorAll('#reads .chip').forEach(function(c){ c.addEventListener('click', function(){ setRead(Number(c.dataset.r)); }); });
-  setRead(0);
+  /* Example types. Each keeps its own editable chain. */
+  var types = {
+    avoid: {
+      label: 'Avoiding',
+      chain: {sit: "Something I've been putting off", tho: "I can't handle it right now.", fee: 'Anxious', bod: 'Tight chest, restless', beh: 'Put it off again'},
+      intro: 'Something you’ve been putting off comes up, and the first thought is "I can’t handle it right now."',
+      away: 'Put it off again', toward: 'Take one small step'
+    },
+    challenge: {
+      label: 'A challenge',
+      chain: {sit: 'A challenge I set for myself', tho: 'What if I fail?', fee: 'Nervous', bod: 'Butterflies, tense shoulders', beh: 'Think about backing out'},
+      intro: 'You’ve set yourself a challenge, and the first thought is "What if I fail?"',
+      away: 'Back out', toward: 'Keep going, even imperfectly'
+    },
+    hard: {
+      label: 'Something hard',
+      chain: {sit: 'Something hard I’m going through', tho: 'This will never get better.', fee: 'Discouraged', bod: 'Tired, low energy', beh: 'Pull away from people'},
+      intro: 'You’re going through something hard, and the first thought is "This will never get better."',
+      away: 'Pull away', toward: 'Stay connected and use skills'
+    }
+  };
+  var active = 'avoid';
+  var eds = document.querySelectorAll('.chain .ed');
 
-  // Five-part model
+  function saveChain(){ eds.forEach(function(e){ types[active].chain[e.dataset.f] = e.textContent; }); }
+  function loadChain(){
+    eds.forEach(function(e){ e.textContent = types[active].chain[e.dataset.f]; });
+    document.querySelectorAll('#picker .chip').forEach(function(c){ c.classList.toggle('on', c.dataset.t === active); });
+    var t = types[active];
+    document.getElementById('from').textContent = t.fromGroup ? 'Using an example from the group' : '';
+    var tho = t.chain.tho.trim();
+    var sit = t.chain.sit.trim(); sit = sit.charAt(0).toUpperCase() + sit.slice(1);
+    document.getElementById('expoIntro').textContent = sit + (/[.?!]$/.test(sit) ? '' : '.') + (tho ? ' The first thought is "' + tho + (/[.?!]$/.test(tho) ? '' : '.') + '" Distress climbs, and there are two ways it can go.' : '');
+    setPath(currentPath);
+  }
+  function useType(t){ saveChain(); active = t; loadChain(); }
+  document.querySelectorAll('#picker .chip').forEach(function(c){ c.addEventListener('click', function(){ useType(c.dataset.t); }); });
+  eds.forEach(function(e){ e.addEventListener('blur', function(){ saveChain(); loadChain(); }); });
+
+  /* Harvest: answers become clickable examples */
+  document.querySelectorAll('.hcol').forEach(function(col){
+    var input = col.querySelector('input'), items = col.querySelector('.items'), t = col.dataset.t;
+    input.addEventListener('keydown', function(e){
+      if (e.key !== 'Enter' || !input.value.trim()) return;
+      var text = input.value.trim(); input.value = '';
+      var it = document.createElement('span'); it.className = 'item';
+      var lab = document.createElement('span'); lab.textContent = text;
+      var x = document.createElement('button'); x.className = 'x'; x.innerHTML = '&times;'; x.setAttribute('aria-label', 'Remove');
+      x.addEventListener('click', function(ev){ ev.stopPropagation(); it.remove(); });
+      it.appendChild(lab); it.appendChild(x);
+      it.addEventListener('click', function(){
+        document.querySelectorAll('.item').forEach(function(o){ o.classList.toggle('on', o === it); });
+        saveChain();
+        active = t;
+        types[t].chain.sit = text;
+        types[t].fromGroup = true;
+        loadChain();
+      });
+      items.appendChild(it);
+    });
+  });
+
+  /* Five-part model */
   var parts = {
-    tho: ['Thoughts', 'What goes through your mind', 'Words, images, and guesses about what something means.'],
-    fee: ['Feelings', 'Your mood, usually one word', 'Scared, sad, angry, relieved, embarrassed. Feelings can be rated by how strong they are.'],
+    tho: ['Thoughts', 'What goes through your mind', 'Words, images, guesses, and predictions about what something means or what will happen.'],
+    fee: ['Feelings', 'Your mood, usually one word', 'Anxious, sad, angry, nervous, hopeful. Feelings can be rated by how strong they are.'],
     bod: ['Body', 'What your body does', 'Heart rate, breathing, muscle tension, energy, a knot in the stomach.'],
     beh: ['Behavior', 'What you do, or don’t do', 'Including what you avoid. Behavior changes the situation, which feeds the next thought.']
   };
-  var idx = {tho: 0, fee: 1, bod: 2, beh: 3};
   var colors = {tho: 'var(--tho)', fee: 'var(--fee)', bod: 'var(--bod)', beh: 'var(--beh)'};
   var detail = document.getElementById('detail'), nodes = document.querySelectorAll('.five .node');
   function pick(k){
-    var p = parts[k], ex = reads[rsel][idx[k]];
+    saveChain();
+    var p = parts[k], ex = (types[active].chain[k] || '').trim();
     nodes.forEach(function(n){ n.classList.toggle('on', n.dataset.k === k); });
     detail.style.setProperty('--c', colors[k]);
-    detail.innerHTML = '<div class="dk">' + p[0] + '</div><div class="dh">' + p[1] + '</div><div class="dp">' + p[2] + '</div>' +
-      (ex ? '<div class="dx"><b>In the crash example:</b> <span></span></div>' : '');
-    if (ex) detail.querySelector('.dx span').textContent = ex;
+    detail.innerHTML = '<div class="dk">' + p[0] + '</div><div class="dh">' + p[1] + '</div><div class="dp">' + p[2] + '</div>';
+    if (ex) {
+      var dx = document.createElement('div'); dx.className = 'dx';
+      dx.innerHTML = '<b>In our example:</b> '; dx.appendChild(document.createTextNode(ex));
+      detail.appendChild(dx);
+    }
   }
   nodes.forEach(function(n){
     n.addEventListener('click', function(){ pick(n.dataset.k); });
     n.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(n.dataset.k); } });
   });
 
-  // Loop step-through
-  var sts = document.querySelectorAll('.loop .st'), lis = document.querySelectorAll('#steps li'), step = -1;
-  function drawLoop(){
-    sts.forEach(function(s, i){ s.classList.toggle('on', i === step); s.classList.toggle('done', i < step); });
-    lis.forEach(function(l, i){ l.classList.toggle('on', i === step); l.classList.toggle('seen', i < step); });
-    document.getElementById('next').textContent = step >= 4 ? 'Around again' : 'Next step';
+  /* Two paths */
+  var currentPath = 'away';
+  var pv = document.querySelectorAll('.expo .pv'), ps = document.getElementById('pathSteps');
+  function esc(s){ var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function setPath(v){
+    currentPath = v;
+    var t = types[active], tho = esc((t.chain.tho || '').trim() || 'the first thought');
+    var text = {
+      away: ['<b>First thought:</b> ' + tho, '<b>Distress</b> climbs.', '<b>Move away:</b> ' + esc(t.away.toLowerCase()) + '.', '<b>Relief</b> comes right away.', '<b>Next time</b> the thought feels truer, and distress climbs faster.'],
+      toward: ['<b>First thought:</b> ' + tho, '<b>Distress</b> climbs.', '<b>Stay with it:</b> ' + esc(t.toward.toLowerCase()) + '.', '<b>Distress peaks</b> and often eases with time.', '<b>You learn</b> something new: "That was hard, and I got through it."'],
+      both: ['<b>Same start:</b> the same thought and the same climb.', '<b>Moving away</b> brings relief now and a stronger thought later.', '<b>Staying with it</b> is harder now and builds evidence for later.']
+    }[v];
+    pv.forEach(function(g){ g.classList.toggle('off', v !== 'both' && !g.classList.contains(v)); });
+    ps.innerHTML = text.map(function(x){ return '<li>' + x + '</li>'; }).join('');
+    document.querySelectorAll('#paths .chip').forEach(function(c){ c.classList.toggle('on', c.dataset.v === v); });
   }
-  document.getElementById('next').addEventListener('click', function(){ step = step >= 4 ? 0 : step + 1; drawLoop(); });
-  document.getElementById('restart').addEventListener('click', function(){ step = -1; drawLoop(); });
-  sts.forEach(function(s, i){ s.style.cursor = 'pointer'; s.addEventListener('click', function(){ step = i; drawLoop(); }); });
+  document.querySelectorAll('#paths .chip').forEach(function(c){ c.addEventListener('click', function(){ setPath(c.dataset.v); }); });
 
-  // Board
+  loadChain();
+
+  /* Board */
   var rows = document.getElementById('rows');
   function addRow(){
     var tr = document.createElement('tr');
